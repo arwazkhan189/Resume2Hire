@@ -44,7 +44,7 @@ const pdfparse = require("pdf-parse");
 const pdfMulter = Multer({ dest: "uploads/", storage: Multer.memoryStorage() });
 
 //-----------paths---------------------------
-const path = require("node:path");
+const path = require("path");
 const staticPath = path.join(__dirname, "/public");
 const templatePath = path.join(__dirname, "/templates");
 
