@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring - R2H</title>
+    <link rel="stylesheet" href="./../css/nav-style.css">
+    <link rel="stylesheet" href="./../css/hiring.css">
+</head>
+
+<body>
+
+    <header class="head">
+        <div class="resume2hire-text my-5">
+            <img src="./../img/r2hlogo.png" alt="" srcset="" class="img-logo">
+        </div>
+
+        <div class="hamburger">
+            <img src="./../img/hamburger.png" alt="menu">
+        </div>
+
+
+        <nav class="nav-bar">
+            <ul class="list-unstyled ">
+                <li class="">
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000" target="_blank" class="text-decoration-none">Resume Builder</a>
+                </li>
+                <li>
+                    <a href="/screening" class="text-decoration-none">Screening</a>
+                </li>
+                <li>
+                    <a href="/hiring" class="active text-decoration-none">Hiring</a>
+                </li>
+                <li>
+                    <a href="/readJobPost/all" class="text-decoration-none">Jobs</a>
+                </li>
+                <li>
+                    <a href="/#profile-cards" class="text-decoration-none">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="btn-group">
+        <a href="/addJobPost" class="addJobBtn">Add Job Post</a>
+        <a href="#" onclick="signOut();" class="signoutBtn">Sign Out</a>
+    </div>
+
+    {{#each jobposts}}
+    <div class="card">
+        <div class="logo-img">
+            <img src={{companyLogoUrl}} alt="Company Logo" id="brand-logo" class="brand-logo">
+        </div>
+        <div class="info">
+            <div class="main-info">
+                <p class="profile" id="profile">{{jobTitle}}</p>
+                <div class="icons">
+                    <!--<a href={{hiringLink}} target="_blank"><img src="./../img/share-solid.svg" alt="" class="info-icons apply"></a>-->
+                </div>
+            </div>
+
+            <div class="sub-info">
+                <p class="companyName" id="company">{{companyName}}</p>
+                <p class="location" id="location">{{jobLocation}} (<span id="mode">{{jobMode}}</span>)</p>
+            </div>
+
+            <div class="btn">
+                <p class="edit"><a href="/editJobPost/{{jobPostId}}" style="color:white">Edit</a></p>
+                <p class="delete"><a href="#" onclick="deletePost(`{{jobPostId}}`)" id="deleteBtn"
+                        style="color:white">Delete</a>
+                </p>
+                <p class="more"><a href="/readJobPost/{{jobPostId}}" style="color:white">view more</a></p>
+            </div>
+
+
+        </div>
+    </div>
+    {{/each}}
+
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <p>Copyright &#169; Resume2Hire</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        function deletePost(jobPostId) {
+            const imageUrl = document.getElementById("brand-logo").src;
+            Swal.fire({
+                title: 'Are you sure?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const res = await fetch(`/deleteJobPost/${jobPostId}`, {
+                            method: "POST",
+                            body: JSON.stringify({
+                                imageUrl: imageUrl
+                            }),
+                            headers: { 'Content-Type': 'application/json' }
+                        });
+                        const data = await res.json();
+                        if (data) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Job Post has been deleted.',
+                                'success'
+                            ).then(() => {
+                                location.reload();
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res.status,
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: error,
+                        });
+                    }
+                }
+            });
+        };
+
+        function signOut() {
+            Swal.fire({
+                title: 'Do you want to signout?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const res = await fetch("/signout", {
+                            method: "GET"
+                        });
+                        if (res.status == 200) {
+                            location.assign("/signin");
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: res.status,
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: error,
+                        });
+                    }
+                }
+            })
+        }
+
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+
+
+</html>

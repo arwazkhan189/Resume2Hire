@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - R2H</title>
+    <link rel="stylesheet" href="./../css/jobpost.css">
+</head>
+<body>
+    <header class="head">
+        <div class="resume2hire-text my-5">
+          <img src="./../img/r2hlogo.png" alt="" srcset="" class="img-logo">
+        </div>
+    
+        <div class="hamburger">
+          <img src="./../img/hamburger.png" alt="menu">
+        </div>
+    
+    
+        <nav class="nav-bar">
+          <ul class="list-unstyled ">
+            <li class="">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000" target="_blank" class="text-decoration-none">Resume Builder</a>
+            </li>
+            <li>
+              <a href="/screening" class="text-decoration-none">Screening</a>
+            </li>
+            <li>
+              <a href="/hiring" class="text-decoration-none">Hiring</a>
+            </li>
+            <li>
+              <a href="/readJobPost/all" class="text-decoration-none active">Jobs</a>
+            </li>
+            <li>
+              <a href="/#profile-cards" class="text-decoration-none">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="view-card">
+        <div class="main-info">
+            <img src={{companyLogoUrl}} alt="" id="logo">
+            <p class="profile">Job Profile: <span id="profile">{{jobTitle}}</span></p>
+        </div>
+        <div class="row">
+        <div class="primary-info details">
+            <p class="company">
+                Company: <span id="company">{{companyName}}</span>
+            </p>
+            <p>
+                Job Location: <span id="location">{{jobLocation}}</span>
+            </p>
+            <p class="salary">
+                Job ID: <span id="id">{{jobId}}</span>
+            </p>
+        </div>
+        <div class="job-info details">
+            <p class="company">
+                Job Type: <span id="type">{{jobType}}</span>
+            </p>
+            <p>
+                Mode: <span id="mode">{{jobMode}}</span>
+            </p>
+        </div>
+        <div class="sub-info details">
+            <p class="company">
+                Salary: <span id="salary">{{salary}} LPA</span>
+            </p>
+            <p>
+                Job Function: <span id="function">{{jobFunction}}</span>
+            </p>
+            <p>
+                Expierence Level: <span id="level">{{experienceLevel}}</span>
+            </p>
+            
+        </div>
+        <div class="sub-sub-info details">
+            <p class="company">
+                Years of Exp: <span id="exp">{{yearOfExperience}}</span>
+            </p>
+            <p>
+                Skills: <span id="skills">{{skillsRequired}}</span>
+            </p>
+            <p>
+                HR email: <span id="owner">{{emailHR}}</span>
+            </p>
+        </div>
+    </div>
+        <div class="description details">
+            <p>Job Description: <span id="des">
+              {{jobDescription}}
+            </span></p>
+    
+            
+        </div>
+        <div class="btn-box">
+            <p class="btn"><a  style="color:white" target="_blank" href="{{hiringLink}}">Apply</a></p>
+        </div>
+    
+    </div>
+
+    <footer>
+        <div class="container">
+          <div class="foot">
+            <p>Copyright &#169; Resume2Hire</p>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>

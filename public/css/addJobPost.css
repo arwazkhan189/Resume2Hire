@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/**/
+header {
+    width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1000;
+}
+
+/* .head .resume2hire-text img{
+    height: 20px;
+    width: 20%;
+} */
+
+.resume2hire-text img {
+    width: 30%;
+    font-family: cursive;
+}
+
+.hamburger {
+    display: none;
+    /* width: 100px;
+    height: 20px; */
+    cursor: pointer;
+}
+
+.nav-bar ul {
+    display: flex;
+    z-index: 999;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #394C31;
+    font-size: 20px;
+    padding: 6px 25px;
+    border-radius: 7px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    background-color: #394C31;
+}
+
+.nav-bar ul li a.active {
+    color: white;
+    background-color: #43762d;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    background-color: #394C31;
+}
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .hamburger {
+        display: block;
+        width: 20%;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+
+    .hamburger img {
+        width: 70px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #D2CED4;
+        transition: 0.2s;
+    }
+
+    .nav-bar.active {
+        height: 450px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    .nav-bar.nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+.job-form {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main-div-job {
+    width: 60%;
+    padding: 2%;
+    background: rgba(96, 81, 81, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.job-heading {
+    text-align: center;
+    padding: 2.5%;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+.form-group {
+    padding: 0 5%;
+    display: flex;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.double {
+    margin: 0;
+    padding: 0;
+}
+
+.form-control {
+    box-shadow: 0 4px 10px #394C31;
+}
+
+.col {
+    display: flex;
+    padding: 1%;
+}
+
+
+.button-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group button {
+    padding: 1% 3%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: #394C31;
+}
+
+.form-group button:hover {
+    background-color: #D2CED4;
+    color: black;
+    border: 0;
+}
+
+.form-control option {
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 7px solid black;
+}
+
+.form-control option :hover {
+    color: #fff;
+    background-color: #394C31;
+}
+
+
+footer {
+    background-color: #425061;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.foot p {
+    text-align: center;
+}

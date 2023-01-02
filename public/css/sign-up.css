@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 5%;
+}
+
+#errorLabel {
+  color: red;
+  background: rgb(202, 200, 198);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ========== imgBx ============== */
+
+section .imgBx {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+section .imgBx::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+section .imgBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------image ------------- */
+.user-img{
+    margin-left: 220px;
+}
+.user-img img{
+    height: 100%;
+    width: 100%;
+}
+
+/* --------- animated- text --------*/
+
+
+#container {
+    position: absolute;
+    margin: auto;
+    width: 90vw;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+    filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 60pt;
+
+    text-align: center;
+
+    user-select: none;
+    margin-top: 9%;
+}
+
+/* ========== form ============== */
+
+section .contentBx {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+section .contentBx .formBx {
+  width: 50%;
+  padding: 3%;
+  background-color: #43762d;
+  border-radius: 20px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(198, 198, 198),
+    0.4em 0.4em 1em rgba(0, 0, 0, 0.4);
+}
+
+section .contentBx .formBx .display-heading{
+    display: flex;
+    justify-content: center;
+}
+
+section .contentBx .formBx h2 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx {
+  margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 500;
+  border: 1px solid #ffffff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(198, 198, 198),
+    0.4em 0.4em 1em rgba(0, 0, 0, 0.4);
+  color: #f3f3f3;
+  background: transparent;
+  border-radius: 1rem;
+}
+
+section .contentBx .formBx .inputBx input::placeholder{
+    color: rgb(250, 250, 250);
+    opacity: 0.7; 
+  }
+
+
+section .contentBx .formBx .inputBx input[type="submit"] {
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(21, 82, 47),
+    0.4em 0.4em 1em rgba(0, 0, 0, 0.4);
+    background: #27431c;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 90px;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: #25331f;
+}
+
+section .contentBx .formBx .remember {
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+section .contentBx .formBx .inputBx p {
+  color: #fff;
+}
+
+section .contentBx .formBx .inputBx p a {
+  color: #000000;
+}
+
+
+
+
+
+
+/* *************************Resonsive******************************** */
+
+@media (max-width: 768px) {
+  section{
+    height: auto;
+  }
+  section .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  section .contentBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  section .contentBx .formBx{
+    width: 100%;
+    padding: 2.5rem;
+    background: #fff;
+    margin: 3rem;
+    background-color: #27431c;
+    /* opacity: 70%; */
+  }
+
+  section .contentBx .formBx h2 {
+    color: #fff;
+  
+  }
+  
+
+  section .contentBx .formBx .inputBx input[type="submit"] {
+    background: #27431c;
+    color: #fff;
+  
+  }
+  
+  section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: #27431c;
+  }
+}
+
+
+footer{
+  background-color: #425061;
+  color: white;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.foot p{
+  text-align: center;
+}

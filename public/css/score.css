@@ -1,0 +1,34 @@
+#score-resume{
+    margin-top:4%;
+    margin-bottom: 8%;
+}
+
+.score-img{
+    height: 100px;
+    width: 100px;
+}
+
+.score-head{
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #394C31;
+}
+
+.score-para{
+    font-size: 1.2rem;
+}
+
+.score{
+    background-color:  #E1E1E1;
+    color: #394C31;
+    padding: 1.7%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 15px;
+}
+
+.score:hover{
+    background-color: #394C31;
+    color: #fff;
+}
+

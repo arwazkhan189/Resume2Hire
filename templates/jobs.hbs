@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - R2H</title>
+    <link rel="stylesheet" href="./../css/jobs.css">
+</head>
+<body>
+    <header class="head">
+        <div class="resume2hire-text my-5">
+          <img src="./../img/r2hlogo.png" alt="" srcset="" class="img-logo">
+        </div>
+    
+        <div class="hamburger">
+          <img src="./../img/hamburger.png" alt="menu">
+        </div>
+    
+    
+        <nav class="nav-bar">
+          <ul class="list-unstyled ">
+            <li class="">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="http://localhost:3000" target="_blank" class="text-decoration-none">Resume Builder</a>
+            </li>
+            <li>
+              <a href="/screening" class="text-decoration-none">Screening</a>
+            </li>
+            <li>
+              <a href="/hiring" class="text-decoration-none">Hiring</a>
+            </li>
+            <li>
+              <a href="/readJobPost/all" class="text-decoration-none active">Jobs</a>
+            </li>
+            <li>
+              <a href="/#profile-cards" class="text-decoration-none">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+    {{#each jobposts}}
+    <div class="card">
+        <div class="logo-img">
+            <img src={{companyLogoUrl}} alt="" id="brand-logo" class="brand-logo">
+        </div>
+        <div class="info">
+            <div class="main-info">
+                <p class="profile" id="profile">{{jobTitle}}</p>
+                <div class="icons">
+                  <img src="share-nodes-solid.svg" alt="" class="info-icons share">
+                  <img src="bookmark-solid.svg" alt="" class="info-icons save">
+                    <a href={{hiringLink}} target="_blank"><img src="./../img/share-solid.svg" alt="" class="info-icons apply"></a>
+                </div>
+            </div>
+            
+            <div class="sub-info">
+                <p class="companyName" id="company">{{companyName}}</p>
+                <p class="location" id="location">{{jobLocation}} (<span id="mode">{{jobMode}}</span>)</p>
+            </div>
+
+            <div class="btn">
+                <p class="more"><a href="/readJobPost/{{jobPostId}}" style="color:white">view more</a></p>
+            </div>
+            
+
+        </div>
+    </div>
+    {{/each}}
+
+    <footer>
+        <div class="container">
+          <div class="foot">
+            <p>Copyright &#169; Resume2Hire</p>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>

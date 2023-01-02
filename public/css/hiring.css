@@ -1,0 +1,137 @@
+.btn-group{
+    display: flex;
+    justify-content: center;
+}
+.btn-group .signoutBtn {
+    background-color: red;
+    border: 1px solid #43762d;
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
+    margin: 1%;
+    border-radius: 20px;
+}
+
+.btn-group .addJobBtn {
+    background-color: orange;
+    border: 1px solid #43762d;
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
+    margin: 1%;
+    border-radius: 20px;
+}
+
+.btn-group a:hover {
+    background-color: #394C31;
+}
+
+footer {
+    background-color: #425061;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.foot p {
+    text-align: center;
+}
+
+
+.card {
+    background-color: #e1e1e1;
+    padding: 5px;
+    width: 70vw;
+    height: 11rem;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+}
+
+.brand-logo {
+    width: 100%;
+    height: 100%;
+    margin-right: 1rem;
+}
+
+.info {
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.main-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.info-icons {
+    width: 20px;
+}
+
+img.info-icons {
+    margin-right: 50px;
+}
+
+img.info-icons:last-child {
+    margin-right: 0;
+}
+
+p.profile {
+    font-size: 1.2rem;
+}
+
+p.companyName,
+p.location {
+    font-size: 1.1rem;
+}
+
+.btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn p{
+    margin: 0.5em;
+}
+
+p.more {
+    padding: 10px 15px;
+    background-color: #394C31;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+p.edit {
+    padding: 10px 15px;
+    background-color: orange;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+p.delete {
+    padding: 10px 15px;
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}

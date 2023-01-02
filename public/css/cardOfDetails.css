@@ -1,0 +1,56 @@
+.cardOfDetail i {
+    color: #43762d;
+    font-size: 80px;
+    padding: 30px;
+}
+
+.OfWhy {
+    background-color: rgba(172, 197, 160, 0.25);
+}
+
+.OfWhy h1 {
+    font-size: 50px;
+}
+
+.hrOfWhy {
+    width: 12%;
+    border: 3px solid #43762d;
+    opacity: 1;
+
+}
+
+.OfWhy span {
+    color: rgb(156, 66, 66);
+}
+
+.cardOfDetails p {
+    word-spacing: 5px;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.waveOfWhy svg {
+    position: absolute;
+}
+
+.sec_2 .tempResu {
+    width: 140% !important;
+    border: none;
+    padding: 0px 15px;
+
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.imgTempResuForGlass {}
+
+.blopTemp {
+    position: absolute;
+    width: 40%;
+    top: 38px;
+    right: -50px;
+    z-index: -1;
+}

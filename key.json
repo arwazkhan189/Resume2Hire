@@ -1,0 +1,20 @@
+{
+  "type": "service_account",
+  "project_id": "resume2hire-926b0",
+  "private_key_id": "50dc60d1e5049f38e94db2606ad9642e1b61c560",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC35a8Qwbb67d6H\nmn08J8O5gFhIZo88ZcJesxDKCu+2J7y23nqMU4rkWgYBuxr9rCCGuQpvxF5r5A8a\nZEJUN8dhAFHMhWQ6zNav5DG/aqmYzCoy3WEKzF/2Erv2EM+4B1DdImykSEvdvbOq\n3r/MLR+SpZZV5mzpnC/j8PXW0skB+Jh5x2It1SkUCZ/+r8FhJLuEHjFyQ2orrs/Z\niaGu3ByUOFVRTSIhW85kwRK/Bipb931VeDxDPyd+a9D++jLmcOv9IUuTulvebVhv\nyzhrWvVkBwI/WpicAr3IDkyxJSxFPHHVVae6woZpzhi7XDACFvISYqM09VRTOQlR\nRznKvXzJAgMBAAECggEAQa+P7atT4aNvdf5Pt1n4xly6q/m+NfOfDtZlK9XmM6lT\n9fnXyiHZHaGuPZYImQ2PfK/Bs5RvqZgHcQTY0F4wIEzN6wDGgV5DXQZkYpwFwidC\n93ItxH6l1C5y5vywRWqPjr1KExAj0St+bo0r8xE3EtmErmAlDPiV/pRGK5qU49e+\nAyZG3y0c+yLlO2M03+96v8nAhAXJmu0MGo30Cz5+KqCBExDb0iPrRR9/PaLfun+J\nnnGh8nuPqPBgWK6eqxnP56FPWPwcxSSoyotnUVhROLLyzAdnmmMqOYKqww8g4sah\nw/SLth0u38UvqufV04nlzyl5arxTDyc4kQc7zarrhQKBgQDfxk3FlBxx0maU0rxd\nIcuAE3u9UT4olz/eG2l3gfR689/WKurzwC7VwJGTN4EO6XNAbRGjJd8yJjI43YBc\noOAPohs1Ms/71LCH3BOFeoncxUkxhajHrMbHsYYqpG/A948TMLEV0w/4C2OHv7oV\ncMkuiRZofDSI5kOYTRL7/cwtuwKBgQDSYUFbXMwlt8S+h4NF8T1yhYGAEAXRZt30\neFe2gOi1o0qDSdaxtaip2OZBivl2PpyO5+fpX14pz1bP4bVsWVrN4efWumCsErB9\nmodPELXFna3HHOdJPkr4PCniRircb+EXRMOLU0lilOujhLXFAu5z/MoVxxfNrFct\n44TGk+dVSwKBgQCQcVF8KpmdwwEiKVEbEJhqCKmDz3A/BTpdpPYUBReJUef3N2bH\nhhL1OML+8wHkXT5epMiQtf53QX6DhD66C8H1dV74nN7xoB1+5MjZDPr2PYZ8Z9lF\nYjpBZk7DMbdNKL761SBJhR62rqtFUbXM5yuFVUnYkevbPj79jSqm6/EixwKBgQCY\nCvm1EcfoqntiR4W0ErkZ/yqsZugNgo5+lEqv91I3k5/SapbjMCqJNdyTGeFYd7+l\n+Cw/GVFwXgybiMAZYiqiCNYI9gHP2mH7JKcNmUIFZAOnl1gAMyjzZmfOxG9NiP3g\nVy4Lj1HGEWKLdun3TDsRUGyseIrXdeo7m+blrRbPKQKBgQC1XkQb3nlzmkkQB3/Y\niPf+L/BssK6j0os5FrbBeFAQdk9+dhTp2NHiHjjay73Y1eaOr6h4GIHxQH20T7BL\nTBpFR/WKS2Tr/Wqumw1eZ661ARwSlbjOwf1SnRcEcbzpAhffme0k4rcFmOq7YrTN\nJqh+yrQrMQ9vtNFENQmoJbbjAg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fqdf5@resume2hire-926b0.iam.gserviceaccount.com",
+  "client_id": "117692934681666688202",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fqdf5%40resume2hire-926b0.iam.gserviceaccount.com",
+  "apiKey": "AIzaSyCCnjwJ_GGLQkHgYoOcjP6VgWkwyMbdezE",
+  "authDomain": "resume2hire-926b0.firebaseapp.com",
+  "projectId": "resume2hire-926b0",
+  "storageBucket": "resume2hire-926b0.appspot.com",
+  "messagingSenderId": "125615143558",
+  "appId": "1:125615143558:web:9eadf24959adfcb7dd2f07",
+  "measurementId": "G-T7EB7YGDBT",
+  "storageImagePath":"gs://resume2hire-926b0.appspot.com/companyLogo/"
+}

@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Google Sans Regular";
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.display-screen{
+    display: flex;
+    justify-content: center;
+}
+
+.job-description{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    height: 350px;
+    border: 2px solid #7eccf2;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.paste
+{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.upload{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    border: 2px solid #7eccf2;
+    margin: 0;
+    padding: 0;
+}
+
+.head-1{
+    width: 100%;
+    background-color: #e1e1e1;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.text-area-job textarea{
+    resize: none;
+}
+
+.text-area-job textarea:invalid{
+    border: 2px dashed red;
+}
+
+.text-area-job textarea:valid{
+    border: 2px solid #7eccf2;
+}
+
+/* ------------------ button ------------------- */
+
+.score-btn{
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+}
+
+.score{
+    padding: 1%;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    background-color: #394c39;
+    border: 0;
+    color: #fff;
+}
+
+.score:hover{
+    background-color: #192219;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+
+
+/* -------------result------------------------ */
+.progress {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: rotate(-90deg) rotateX(180deg);
+}
+
+.progress circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s ease;
+    stroke: #394c39;
+    stroke-width: 9px;
+}
+
+.progress .bar {
+    stroke: #e1e1e1;
+}
+
+.progressdiv {
+    position: relative;
+}
+
+.progressdiv:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 35px;
+    transform: translate(-50%, -50%);
+    content: attr(data-percent) " %";
+}
+
+
+/*navbar*/
+header {
+    width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1000;
+}
+.resume2hire-text img {
+    width: 30%;
+    font-family: cursive;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-bar ul {
+    display: flex;
+    z-index: 999;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #394C31;
+    font-size: 20px;
+    padding: 6px 25px;
+    border-radius: 7px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    background-color: #394C31;
+}
+
+.nav-bar ul li a.active {
+    color: white;
+    background-color: #43762d;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    background-color: #394C31;
+}
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .hamburger {
+        display: block;
+        width: 20%;
+    }
+
+    img.img-logo {
+        width: 35%;
+    }
+
+    .hamburger img {
+        width: 70px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .nav-bar {
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #D2CED4;
+        transition: 0.2s;
+    }
+
+    .nav-bar.active {
+        height: 450px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    .nav-bar.nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+
+
+footer{
+    margin-top: 2%;
+    background-color: #425061;
+    color: white;
+    padding: 10px 0;
+}
+
+.foot p{
+    text-align: center;
+}

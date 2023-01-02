@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R2H | screening</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/screening.css" />
+
+</head>
+
+<body>
+
+    <header class="head">
+        <div class="resume2hire-text my-5">
+            <img src="img/r2hlogo.png" alt="" srcset="" class="img-logo">
+        </div>
+
+        <div class="hamburger">
+            <img src="img/hamburger.png" alt="menu">
+        </div>
+
+
+        <nav class="nav-bar">
+            <ul class="list-unstyled ">
+                <li class="">
+                    <a href="/" class="text-decoration-none">Home</a>
+                </li>
+                <li>
+                    <a href="http://localhost:3000" target="_blank" class="text-decoration-none">Resume Builder</a>
+                </li>
+                <li>
+                    <a href="/screening" class="active text-decoration-none">Screening</a>
+                </li>
+                <li>
+                    <a href="/hiring" class="text-decoration-none">Hiring</a>
+                </li>
+                <li>
+                    <a href="/readJobPost/all" class="text-decoration-none">Jobs</a>
+                </li>
+                <li>
+                    <a href="/#profile-cards" class="text-decoration-none">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="screen">
+        <div class="display-screen">
+            <div class="job-description">
+                <div class="paste">
+                    <div class="head-1">
+                        <h2>Paste the job description here</h2>
+                    </div>
+                    <div class="text-area-job">
+                        <textarea name="story" id="story" cols="100" rows="20" minlength="20" maxlength="10000"
+                            placeholder="job description..."></textarea>
+                    </div>
+                </div>
+
+                <div class="upload">
+                    <div class="head-1">
+                        <h2>Upload your resume</h2>
+                    </div>
+                    <div class="file-upload">
+                        <input type="file" accept="application/pdf" id="resume" />
+                        <i class="fa fa-arrow-up" class="arrow"></i>
+                    </div>
+                    <div class="para-drop">Drop your resume here</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="score-btn">
+            <button type="submit" id="btn" onclick="myFunction()" class="score">
+                Get Score
+            </button>
+        </div>
+
+        <div class="progressdiv" data-percent="0" id="result">
+            <svg class="progress" width="178" height="178" viewport="0 0 100 100" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle r="80" cx="89" cy="89" fill="transparent" stroke-dasharray="502.4" stroke-dashoffset="0">
+                </circle>
+                <circle class="bar" r="80" cx="89" cy="89" fill="transparent" stroke-dasharray="502.4"
+                    stroke-dashoffset="0"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <p>Copyright &#169; Resume2Hire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+
+        var data = "";
+        const resume = document.getElementById('resume');
+
+        resume.addEventListener('change', async function () {
+            var formData = new FormData();
+            formData.append('resume', resume.files[0]);
+            try {
+                const response = await fetch('/extractResumeText', {
+                    method: 'POST',
+                    body: formData
+                });
+                data = await response.text();
+            } catch (error) {
+                console.log(error);
+            }
+
+        })
+
+        function wordCountMap(str) {
+            let words = str.split(' ');
+            let wordCount = {};
+            words.forEach((w) => {
+                wordCount[w] = (wordCount[w] || 0) + 1;
+            });
+            return wordCount;
+        }
+
+        //Dictionary to contain all the words that are present in both dictionary
+
+        function addWordsToDictionary(wordCountmap, dict) {
+            for (let key in wordCountmap) {
+                dict[key] = true;
+            }
+        }
+
+        //Now we can change our word count map into a vector using our dictionary.
+
+        function wordMapToVector(map, dict) {
+            let wordCountVector = [];
+            for (let term in dict) {
+                wordCountVector.push(map[term] || 0);
+            }
+            return wordCountVector;
+        }
+
+        //finding cosine similarity between two vectors
+
+
+        //dot product
+        function dotProduct(vecA, vecB) {
+            let product = 0;
+            for (let i = 0; i < vecA.length; i++) {
+                product += vecA[i] * vecB[i];
+            }
+            return product;
+        }
+
+        //magnitude
+        function magnitude(vec) {
+            let sum = 0;
+            for (let i = 0; i < vec.length; i++) {
+                sum += vec[i] * vec[i];
+            }
+            return Math.sqrt(sum);
+        }
+
+        function cosineSimilarity(vecA, vecB) {
+            return dotProduct(vecA, vecB) / (magnitude(vecA) * magnitude(vecB));
+        }
+
+        //Now we have everything we need,
+        //but lets make our life more easier by adding a function that takes two strings rather than vectors.
+
+
+        function textCosineSimilarity(txtA, txtB) {
+            const wordCountA = wordCountMap(txtA);
+            const wordCountB = wordCountMap(txtB);
+            let dict = {};
+            addWordsToDictionary(wordCountA, dict);
+            addWordsToDictionary(wordCountB, dict);
+            const vectorA = wordMapToVector(wordCountA, dict);
+            const vectorB = wordMapToVector(wordCountB, dict);
+            return cosineSimilarity(vectorA, vectorB);
+        }
+
+        //similarity score
+
+        function getSimilarityScore(val) {
+            return Math.round(val * 100)
+        }
+
+        function myFunction() {
+            const jd = document.getElementById('story').value;
+            const val = textCosineSimilarity(jd, data);
+            const ans = getSimilarityScore(val);
+            const result = document.getElementById('result');
+            // const percent = document.getElementById('chart');
+            document.getElementById('result').setAttribute('data-percent', ans);
+            var totalProgress, progress;
+            const circles = document.querySelectorAll('.progress');
+            for (var i = 0; i < circles.length; i++) {
+                totalProgress = circles[i].querySelector('circle').getAttribute('stroke-dasharray');
+                progress = circles[i].parentElement.getAttribute('data-percent');
+                circles[i].querySelector('.bar').style['stroke-dashoffset'] = totalProgress * progress / 100;
+            }
+        }
+    </script>
+</body>
+
+</html>
