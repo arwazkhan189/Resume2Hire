@@ -227,15 +227,15 @@ section .contentBx .formBx .inputBx p a {
 }
 
 
-footer{
+.ftr{
   background-color: #425061;
   color: white;
   padding: 20px 0;
   position: absolute;
-  bottom: 0;
+  bottom: -241px;
   width: 100%;
 }
 
-.foot p{
+.foot2 p{
   text-align: center;
 }
