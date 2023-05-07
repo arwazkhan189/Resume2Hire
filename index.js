@@ -128,6 +128,11 @@ app.get("/signout", requireAuth, async (req, res) => {
     });
 });
 
+//*-----------------------Resume Builder---------------------------------
+app.get("/resumeBuilder", async (req, res) => {
+  res.sendFile(staticPath + "/resumeBuilder.html");
+});
+
 //----------------------Hiring ----------------------------
 //hiring (get)
 app.get("/hiring", requireAuth, async (req, res) => {
